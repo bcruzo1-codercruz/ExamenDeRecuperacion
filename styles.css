@@ -1,0 +1,311 @@
+:root {
+    --bg-main: #0b0f19;
+    --bg-panel: #161e2d;
+    --bg-header: #06090f;
+    --accent-orange: #f39c12;
+    --accent-hover: #e67e22;
+    --text-light: #ffffff;
+    --text-muted: #9aa0a6;
+    --danger: #e74c3c;
+    --danger-hover: #c0392b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header estilo Cinépolis */
+.main-header {
+    background-color: var(--bg-header);
+    border-bottom: 2px solid var(--accent-orange);
+    padding: 15px 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-orange);
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--accent-orange);
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.dark-panel {
+    background: var(--bg-panel);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    border-left: 4px solid var(--accent-orange);
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* Formularios y Filtros */
+.filtros-container {
+    display: flex;
+    gap: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #212c40;
+    border: 1px solid #32415c;
+    border-radius: 6px;
+    color: var(--text-light);
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Botones */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--accent-orange);
+    color: #fff;
+    flex: 1;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background-color: #4b5563;
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+.btn-edit {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.btn-edit:hover {
+    background-color: #2980b9;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Cuadrícula de Películas */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--bg-panel);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+.card img.poster-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: var(--accent-orange);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.card-actions {
+    margin-top: auto;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Modal Estilos */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    border: 1px solid #32415c;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--accent-orange);
+}
+
+.modal-body {
+    display: flex;
+    gap: 25px;
+}
+
+.modal-img {
+    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.modal-text {
+    flex: 1;
+}
+
+.modal-title {
+    color: var(--accent-orange);
+    margin-top: 0;
+    font-size: 26px;
+    border-bottom: 1px solid #32415c;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-details p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.modal-details strong {
+    color: #fff;
+}
+
+/* Responsivo para el Modal */
+@media (max-width: 600px) {
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .filtros-container {
+        flex-direction: column;
+    }
+}

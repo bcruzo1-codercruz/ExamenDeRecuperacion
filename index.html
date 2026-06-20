@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine VIP - Cartelera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="logo">CINE<span>VIP</span></h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="filtros-section dark-panel">
+            <h2>Buscar Películas</h2>
+            <div class="filtros-container">
+                <input type="text" id="filtroNombre" placeholder="Buscar por Título (Ej. Spider-Man)...">
+                <input type="text" id="filtroUbicacion" placeholder="Buscar por Ubicación (Ej. Guastatoya)...">
+            </div>
+        </section>
+
+        <section class="form-section dark-panel">
+            <h2 id="formTitulo">Agregar Nueva Película</h2>
+            <form id="peliculaForm">
+                <input type="hidden" id="imdbID">
+                <div class="form-grid">
+                    <input type="text" id="Title" placeholder="Título de la película" required>
+                    <input type="text" id="Year" placeholder="Año" required>
+                    <input type="text" id="Type" placeholder="Género (Ej. Acción)" required>
+                    <input type="url" id="Poster" placeholder="URL del Póster (http://...)" required>
+                    <input type="text" id="Ubication" placeholder="Ubicación" required>
+                </div>
+                <textarea id="description" placeholder="Descripción de la película" required></textarea>
+                
+                <div class="form-actions">
+                    <button type="submit" id="btnGuardar" class="btn-primary">Guardar Película</button>
+                    <button type="button" id="btnCancelar" class="btn-secondary hidden">Cancelar Edición</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="cartelera-section">
+            <h2 class="section-title">CARTELERA DISPONIBLE</h2>
+            <div id="carteleraGrid" class="grid-container">
+                </div>
+        </section>
+    </main>
+
+    <div id="detalleModal" class="modal hidden">
+        <div class="modal-content dark-panel">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <img id="modalPoster" src="" alt="Poster" class="modal-img">
+                <div class="modal-text">
+                    <h2 id="modalNombre" class="modal-title"></h2>
+                    <div id="modalInfo" class="modal-details"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
