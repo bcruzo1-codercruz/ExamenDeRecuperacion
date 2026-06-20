@@ -1,5 +1,5 @@
 const API_URL = 'http://52.171.58.51:8080/api/cartelera';
-
+let peliculasCache=[];
 const carteleraGrid = document.getElementById('carteleraGrid');
 const form = document.getElementById('peliculaForm');
 const filtroNombre = document.getElementById('filtroNombre');
