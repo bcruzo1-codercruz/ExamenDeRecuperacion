@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/cartelera/:match*",
+        "destination": "http://52.171.58.51:8080/api/cartelera/:match*"
+      },
+      {
+        "source": "/api/cartelera",
+        "destination": "http://52.171.58.51:8080/api/cartelera"
+      }
+    ]
+  }
